@@ -108,7 +108,7 @@ if __name__ == '__main__':
     # run parameters
     
     parser.add_argument('--random-seed', help='random seed for repeatability', default=1234)
-    parser.add_argument('--max-episodes', help='max num of episodes to do while training', default=1)
+    parser.add_argument('--max-episodes', help='max num of episodes to do while training', default=10)
     parser.add_argument('--max-episode-len', help='max length of 1 episode', default=1000)
     parser.add_argument('--summary-dir', help='directory for storing tensorboard info', default='./results/tf_ddpg_3')
     parser.add_argument('--load_saved', help='load saved models', default=False, type=bool)

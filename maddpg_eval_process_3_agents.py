@@ -144,10 +144,10 @@ def eval(sess,env,args,actors,critics,noise, last_epoch): #
 				actor = actors[i]
 
 				# ---------------------------------------- removed print -------------------------------
-				logging.debug("\n\nshapes...: ")
-				logging.debug(s[i].shape)
-				logging.debug(np.reshape(s[i],(-1,actor.state_dim)))
-				logging.debug(actor.act(np.reshape(s[i],(-1,actor.state_dim)),noise[i]()).reshape(actor.action_dim,))
+				# logging.debug("\n\nshapes...: ")
+				# logging.debug(s[i].shape)
+				# logging.debug(np.reshape(s[i],(-1,actor.state_dim)))
+				# logging.debug(actor.act(np.reshape(s[i],(-1,actor.state_dim)),noise[i]()).reshape(actor.action_dim,))
 				# -----------------------------------------------------------------------------------------
 
 				# action_index = sample_policy_action(actor.action_dim, actor.act(np.reshape(s[i],(-1,actor.state_dim)),noise[i]()).reshape(actor.action_dim,))
@@ -197,8 +197,8 @@ def eval(sess,env,args,actors,critics,noise, last_epoch): #
 
 					a_temp = np.transpose(np.asarray(a),(1,0,2))
 					a_temp1 = np.transpose(np.asarray(a), (1,2,0))
-					logging.debug("atemp shape : {0}".format(a_temp.shape))
-					logging.debug("atemp1 shape : {0}".format(a_temp1.shape))
+					# logging.debug("atemp shape : {0}".format(a_temp.shape))
+					# logging.debug("atemp1 shape : {0}".format(a_temp1.shape))
 
 					# z = np.zeros(shape= (a_temp.shape[0],a_temp.shape[2]))
 					# z = np.reshape(z, (a_temp.shape[0],1,a_temp.shape[2]))
@@ -217,7 +217,7 @@ def eval(sess,env,args,actors,critics,noise, last_epoch): #
 					# a_for_critic = np.asarray([x.flatten() for x in a_temp])
 					# ------------------------------- changed --------------
 					a_for_critic = np.asarray([x.flatten() for x in a_temp1]) # changed
-					logging.debug("a_for_critic.shape : {0}".format(a_for_critic.shape))
+					# logging.debug("a_for_critic.shape : {0}".format(a_for_critic.shape))
 					# ------------------------------- changed --------------
 					
 					# --------------------------

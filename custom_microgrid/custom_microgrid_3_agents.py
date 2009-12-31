@@ -15,6 +15,9 @@ import matlab.engine
 from mat4py import loadmat, savemat
 import logging
 
+# import subprocess
+import os
+
 LINE_VOLTAGE_MAX_LIMIT = 1050
 LINE_VOLTAGE_MIN_LIMIT = 550
 LINE_CURRENT_MAX_LIMIT = 50
@@ -64,7 +67,14 @@ class Agent():
         self.state = np.asarray([0, LINE_VOLTAGE_RATED / LINE_VOLTAGE_RATED, LINE_CURRENT_RATED / LINE_CURRENT_RATED])
         self.input = np.zeros(TOTAL_TIME_STEPS)
         self.input_timeseries = np.stack([np.linspace(0, 10, TOTAL_TIME_STEPS), self.input],axis=1)
+        
         self.input_file_name = "D:\\maddpg_sec_conrtoller\\custom_microgrid\\input_" + str(agent_num) + ".mat"
+        # if os.path.exists(self.input_file_name):
+        #     os.remove(self.input_file_name)
+        # else:
+        #     logging.debug("not able to remove file...")
+        
+        with open(self.input_file_name, 'w') as f : pass # .close()
         savemat(self.input_file_name, {'input_'+str(agent_num) : np.transpose(self.input_timeseries).tolist()})
         self.cost = 0
         self.reward = 0
@@ -79,6 +89,8 @@ class Agent():
         self.del_i = 0
         self.input = np.zeros(TOTAL_TIME_STEPS)
         self.input_timeseries = np.stack((np.linspace(0, 10, TOTAL_TIME_STEPS), self.input),axis=1)
+        open(self.input_file_name, 'w').close()
+        
         self.cost = 0
         self.reward = 0
 
@@ -183,7 +195,7 @@ class SecondaryController(gym.Env) :
             names = matlab.engine.find_matlab()  
             logging.debug(names)      
             self.eng = matlab.engine.connect_matlab(names[0])  
-        self.eng.set_param('test_v_control_and_i_control_with_droop_copy','SimulationCommand','start',nargout=0)
+        
 
         logging.debug('succesfully connected\n\n')
         logging.debug('starting controls .. \n\n')
@@ -196,9 +208,20 @@ class SecondaryController(gym.Env) :
         done_n = []
         info_n = {'n': []}
 
+        # check for init state and start simulation:
+        if self.curr_step ==0:
+            self.eng.set_param('test_v_control_and_i_control_with_droop_copy','SimulationCommand','start',nargout=0)
+
+        if self.time_is_over :
+            # raise RuntimeError("Episode is done")
+            self.eng.set_param('test_v_control_and_i_control_with_droop_copy','SimulationCommand','stop',nargout=0)
+            logging.debug("Episode done : {0}".format(self.curr_episode))
+        
+
         # set action for each agent and
         # advance microgrid state
         ## for i, agent in enumerate(self.agents):
+        logging.debug("step : {0}".format(self.curr_step))
         self._set_action(action_n)
                 
         # record observation,reward, done and info for each agent
@@ -208,10 +231,7 @@ class SecondaryController(gym.Env) :
             done_n.append(self._get_done())
             info_n['n'].append(self._get_info())
 
-        if self.time_is_over :
-            # raise RuntimeError("Episode is done")
-            logging.debug("Episode done : {0}".format(self.curr_episode))
-        else:
+        if not self.time_is_over:
             self.curr_step += 1
 
         return obs_n, reward_n, done_n, info_n 
@@ -227,7 +247,9 @@ class SecondaryController(gym.Env) :
         
         # logging.debug("len agents : {0}".format(len(self.agents)))
         # logging.debug(len(action_n))
-        # generate inputs for each controller chip
+        # generate inputs for each controller chip        
+
+
         for i, agent in enumerate(self.agents):
 
             if np.argmax(action_n[i]) == 0 :
@@ -242,11 +264,13 @@ class SecondaryController(gym.Env) :
             # print(np.full((TOTAL_TIME_STEPS - self.prev_len), delv).shape)
             # agent.input[self.prev_len +1 ]=[TOTAL_TIME_STEPS - self.prev_len, agent.del_v]
 
-            agent.input_timeseries[self.curr_step +1] = [self.tim[self.curr_step +1], agent.del_v]
+            if not self.curr_step == 999:
+                agent.input_timeseries[self.curr_step +1] = [self.tim[self.curr_step +1], agent.del_v]
+            
             # write to file : 
             savemat(agent.input_file_name, {'input' : np.transpose(agent.input_timeseries).tolist()})   
-            agent.input_timeseries = matlab.double(agent.input_timeseries.tolist())
-            self.eng.workspace['input_' + str(i)] = agent.input_timeseries
+            # agent.input_timeseries = matlab.double(agent.input_timeseries.tolist())
+            # self.eng.workspace['input_' + str(i)] = agent.input_timeseries
 
         # self.eng.set_param('test_v_control_and_i_control_with_droop_copy','SimulationCommand','start',nargout=0)
         
@@ -347,7 +371,7 @@ class SecondaryController(gym.Env) :
 
     def _get_done(self):
 
-        remaining_steps = TOTAL_TIME_STEPS - self.curr_step-1
+        remaining_steps = TOTAL_TIME_STEPS - self.curr_step+1
         self.time_is_over = (remaining_steps <= 0)
         
         return self.time_is_over
