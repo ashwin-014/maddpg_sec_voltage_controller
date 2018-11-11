@@ -1,0 +1,744 @@
+reward =  815.0 time_step_not_fully_allocated 16
+
+Action: [array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.])]
+
+adl_list= [array([ 1.,  0.]), array([ 2.,  0.]), array([ 8.,  1.]), array([ 1.,  0.])] allocated load= []
+time =  4
+None allocated !!
+inside appending fofr unalloc zero [ 0.  5.]
+inside appending fofr unalloc zero [ 0.  5.]
+inside appending fofr unalloc zero [ 0.  5.]
+inside appending for unalloc existing
+
+ [ 7.  5.]
+
+
+delay period []
+
+adl_list= [array([ 3.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  4
+None allocated !!
+inside appending fofr unalloc zero [ 0.  5.]
+inside appending fofr unalloc zero [ 0.  5.]
+inside appending fofr unalloc zero [ 0.  5.]
+inside appending fofr unalloc zero [ 0.  5.]
+
+delay period []
+
+adl_list= [array([ 1.,  0.]), array([ 1.,  0.]), array([ 3.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  4
+None allocated !!
+inside appending fofr unalloc zero [ 0.  5.]
+inside appending for unalloc existing
+
+ [ 1.  5.]
+
+inside appending fofr unalloc zero [ 0.  5.]
+inside appending fofr unalloc zero [ 0.  5.]
+
+delay period []
+
+adl_list= [array([ 7.,  1.]), array([ 2.,  0.]), array([ 4.,  0.]), array([ 2.,  0.])] allocated load= []
+time =  4
+None allocated !!
+inside appending fofr unalloc zero [ 0.  5.]
+inside appending fofr unalloc zero [ 0.  5.]
+inside appending fofr unalloc zero [ 0.  5.]
+inside appending fofr unalloc zero [ 0.  5.]
+
+delay period []
+[5, 8.0, 1.0, 2.0, 8.0, 1.0]
+
+cost =  -115.0
+reward =  24.0 time_step_not_fully_allocated 20
+
+[5, 8.0, 3.0, 1.0, 1.0, 1.0]
+
+cost =  -130.0
+reward =  30.0 time_step_not_fully_allocated 20
+
+[5, 8.0, 1.0, 1.0, 3.0, 1.0]
+
+cost =  -100.0
+reward =  21.0 time_step_not_fully_allocated 20
+
+[5, 10.0, 7.0, 2.0, 4.0, 2.0]
+
+cost =  -135.0
+reward =  28.5 time_step_not_fully_allocated 20
+
+Action: [array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.])]
+
+adl_list= [array([ 1.,  0.]), array([ 2.,  0.]), array([ 8.,  1.]), array([ 1.,  0.])] allocated load= []
+time =  5
+None allocated !!
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending for unalloc existing
+
+ [ 2.  6.]
+
+
+delay period []
+
+adl_list= [array([ 3.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  5
+None allocated !!
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending fofr unalloc zero [ 0.  6.]
+
+delay period []
+
+adl_list= [array([ 1.,  0.]), array([ 1.,  0.]), array([ 3.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  5
+None allocated !!
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending fofr unalloc zero [ 0.  6.]
+
+delay period []
+
+adl_list= [array([ 7.,  1.]), array([ 2.,  0.]), array([ 4.,  0.]), array([ 2.,  0.])] allocated load= []
+time =  5
+None allocated !!
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending fofr unalloc zero [ 0.  6.]
+inside appending fofr unalloc zero [ 0.  6.]
+
+delay period []
+[6, 8.0, 1.0, 2.0, 8.0, 1.0]
+
+cost =  -155.0
+reward =  -1160.5 time_step_not_fully_allocated 24
+
+[6, 7.0, 3.0, 1.0, 1.0, 1.0]
+
+cost =  -165.0
+reward =  -1153.5 time_step_not_fully_allocated 24
+
+[6, 3.0, 1.0, 1.0, 3.0, 1.0]
+
+cost =  -115.0
+reward =  -1167.5 time_step_not_fully_allocated 24
+
+[6, 2.0, 7.0, 2.0, 4.0, 2.0]
+
+cost =  -145.0
+reward =  -1157.0 time_step_not_fully_allocated 24
+
+Action: [array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.])]
+
+adl_list= [array([ 1.,  0.]), array([ 2.,  0.]), array([ 8.,  1.]), array([ 1.,  0.])] allocated load= []
+time =  6
+None allocated !!
+inside appending fofr unalloc zero [ 0.  7.]
+inside appending fofr unalloc zero [ 0.  7.]
+inside appending fofr unalloc zero [ 0.  7.]
+inside appending for unalloc existing
+
+ [ 5.  7.]
+
+
+delay period []
+
+adl_list= [array([ 3.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  6
+None allocated !!
+inside appending fofr unalloc zero [ 0.  7.]
+inside appending fofr unalloc zero [ 0.  7.]
+inside appending fofr unalloc zero [ 0.  7.]
+inside appending fofr unalloc zero [ 0.  7.]
+
+delay period []
+
+adl_list= [array([ 1.,  0.]), array([ 1.,  0.]), array([ 3.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  6
+None allocated !!
+inside appending fofr unalloc zero [ 0.  7.]
+inside appending for unalloc existing
+
+ [ 1.  7.]
+
+inside appending fofr unalloc zero [ 0.  7.]
+inside appending fofr unalloc zero [ 0.  7.]
+
+delay period []
+
+adl_list= [array([ 7.,  1.]), array([ 2.,  0.]), array([ 4.,  0.]), array([ 2.,  0.])] allocated load= []
+time =  6
+None allocated !!
+inside appending fofr unalloc zero [ 0.  7.]
+inside appending fofr unalloc zero [ 0.  7.]
+inside appending fofr unalloc zero [ 0.  7.]
+inside appending fofr unalloc zero [ 0.  7.]
+
+delay period []
+[7, -1.0, 1.0, 2.0, 8.0, 1.0]
+
+cost =  -150.0
+reward =  -2745.5 time_step_not_fully_allocated 28
+
+[7, 1.0, 3.0, 1.0, 1.0, 1.0]
+
+cost =  -170.0
+reward =  -2736.5 time_step_not_fully_allocated 28
+
+[7, 0.0, 1.0, 1.0, 3.0, 1.0]
+
+cost =  -115.0
+reward =  -2756.0 time_step_not_fully_allocated 28
+
+[7, -6.0, 7.0, 2.0, 4.0, 2.0]
+
+cost =  -115.0
+reward =  -2745.5 time_step_not_fully_allocated 28
+
+Action: [array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.])]
+
+adl_list= [array([ 1.,  0.]), array([ 2.,  0.]), array([ 8.,  1.]), array([ 1.,  0.])] allocated load= []
+time =  7
+None allocated !!
+inside appending fofr unalloc zero [ 0.  8.]
+inside appending for unalloc existing
+
+ [ 3.  8.]
+
+inside appending for unalloc existing
+
+ [ 1.  8.]
+
+inside appending for unalloc existing
+
+ [ 18.   8.]
+
+
+delay period []
+
+adl_list= [array([ 3.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  7
+None allocated !!
+inside appending fofr unalloc zero [ 0.  8.]
+inside appending for unalloc existing
+
+ [ 1.  8.]
+
+inside appending fofr unalloc zero [ 0.  8.]
+inside appending for unalloc existing
+
+ [ 3.  8.]
+
+
+delay period []
+
+adl_list= [array([ 1.,  0.]), array([ 1.,  0.]), array([ 3.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  7
+None allocated !!
+inside appending fofr unalloc zero [ 0.  8.]
+inside appending for unalloc existing
+
+ [ 10.   8.]
+
+inside appending fofr unalloc zero [ 0.  8.]
+inside appending for unalloc existing
+
+ [ 4.  8.]
+
+
+delay period []
+
+adl_list= [array([ 7.,  1.]), array([ 2.,  0.]), array([ 4.,  0.]), array([ 2.,  0.])] allocated load= []
+time =  7
+None allocated !!
+inside appending for unalloc existing
+
+ [ 6.  8.]
+
+inside appending for unalloc existing
+
+ [ 1.  8.]
+
+inside appending fofr unalloc zero [ 0.  8.]
+inside appending fofr unalloc zero [ 0.  8.]
+
+delay period []
+[8, -5.0, 1.0, 2.0, 8.0, 1.0]
+
+cost =  -125.0
+reward =  -4733.0 time_step_not_fully_allocated 32
+
+[8, -1.0, 3.0, 1.0, 1.0, 1.0]
+
+cost =  -165.0
+reward =  -4720.0 time_step_not_fully_allocated 32
+
+[8, 4.0, 1.0, 1.0, 3.0, 1.0]
+
+cost =  -135.0
+reward =  -4742.5 time_step_not_fully_allocated 32
+
+[8, -2.0, 7.0, 2.0, 4.0, 2.0]
+
+cost =  -105.0
+reward =  -4735.0 time_step_not_fully_allocated 32
+
+Action: [array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.])]
+
+adl_list= [array([ 1.,  0.]), array([ 2.,  0.]), array([ 8.,  1.]), array([ 1.,  0.])] allocated load= []
+time =  8
+None allocated !!
+inside appending for unalloc existing
+
+ [ 10.   9.]
+
+inside appending for unalloc existing
+
+ [ 19.   9.]
+
+inside appending for unalloc existing
+
+ [ 15.   9.]
+
+inside appending for unalloc existing
+
+ [ 22.   9.]
+
+
+delay period []
+
+adl_list= [array([ 3.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  8
+None allocated !!
+inside appending for unalloc existing
+
+ [ 11.   9.]
+
+inside appending for unalloc existing
+
+ [ 15.   9.]
+
+inside appending for unalloc existing
+
+ [ 8.  9.]
+
+inside appending for unalloc existing
+
+ [ 18.   9.]
+
+
+delay period []
+
+adl_list= [array([ 1.,  0.]), array([ 1.,  0.]), array([ 3.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  8
+None allocated !!
+inside appending for unalloc existing
+
+ [ 7.  9.]
+
+inside appending for unalloc existing
+
+ [ 23.   9.]
+
+inside appending for unalloc existing
+
+ [ 6.  9.]
+
+inside appending for unalloc existing
+
+ [ 21.   9.]
+
+
+delay period []
+
+adl_list= [array([ 7.,  1.]), array([ 2.,  0.]), array([ 4.,  0.]), array([ 2.,  0.])] allocated load= []
+time =  8
+None allocated !!
+inside appending for unalloc existing
+
+ [ 22.   9.]
+
+inside appending for unalloc existing
+
+ [ 14.   9.]
+
+inside appending for unalloc existing
+
+ [ 3.  9.]
+
+inside appending for unalloc existing
+
+ [ 8.  9.]
+
+
+delay period []
+[9, 0.0, 1.0, 2.0, 8.0, 1.0]
+
+cost =  -125.0
+reward =  -7120.5 time_step_not_fully_allocated 36
+
+[9, 0.0, 3.0, 1.0, 1.0, 1.0]
+
+cost =  -165.0
+reward =  -7103.5 time_step_not_fully_allocated 36
+
+[9, 7.0, 1.0, 1.0, 3.0, 1.0]
+
+cost =  -170.0
+reward =  -7125.5 time_step_not_fully_allocated 36
+
+[9, 4.0, 7.0, 2.0, 4.0, 2.0]
+
+cost =  -125.0
+reward =  -7122.5 time_step_not_fully_allocated 36
+
+Action: [array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.])]
+
+adl_list= [array([ 1.,  0.]), array([ 2.,  0.]), array([ 8.,  1.]), array([ 1.,  0.])] allocated load= []
+time =  9
+None allocated !!
+inside appending for unalloc existing
+
+ [ 21.  10.]
+
+inside appending for unalloc existing
+
+ [ 16.  10.]
+
+inside appending for unalloc existing
+
+ [ 16.  10.]
+
+inside appending for unalloc existing
+
+ [ 14.  10.]
+
+
+delay period []
+
+adl_list= [array([ 3.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  9
+None allocated !!
+inside appending for unalloc existing
+
+ [ 18.  10.]
+
+inside appending for unalloc existing
+
+ [ 17.  10.]
+
+inside appending for unalloc existing
+
+ [ 21.  10.]
+
+inside appending for unalloc existing
+
+ [ 19.  10.]
+
+
+delay period []
+
+adl_list= [array([ 1.,  0.]), array([ 1.,  0.]), array([ 3.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  9
+None allocated !!
+inside appending for unalloc existing
+
+ [ 21.  10.]
+
+inside appending for unalloc existing
+
+ [ 13.  10.]
+
+inside appending for unalloc existing
+
+ [ 21.  10.]
+
+inside appending for unalloc existing
+
+ [ 12.  10.]
+
+
+delay period []
+
+adl_list= [array([ 7.,  1.]), array([ 2.,  0.]), array([ 4.,  0.]), array([ 2.,  0.])] allocated load= []
+time =  9
+None allocated !!
+inside appending for unalloc existing
+
+ [ 12.  10.]
+
+inside appending for unalloc existing
+
+ [ 18.  10.]
+
+inside appending for unalloc existing
+
+ [ 21.  10.]
+
+inside appending for unalloc existing
+
+ [ 21.  10.]
+
+
+delay period []
+[10, 2.0, 1.0, 2.0, 8.0, 1.0]
+
+cost =  -135.0
+reward =  -9907.0 time_step_not_fully_allocated 40
+
+[10, 1.0, 3.0, 1.0, 1.0, 1.0]
+
+cost =  -170.0
+reward =  -9886.5 time_step_not_fully_allocated 40
+
+[10, 2.0, 1.0, 1.0, 3.0, 1.0]
+
+cost =  -180.0
+reward =  -9907.5 time_step_not_fully_allocated 40
+
+[10, 2.0, 7.0, 2.0, 4.0, 2.0]
+
+cost =  -135.0
+reward =  -9909.0 time_step_not_fully_allocated 40
+
+Action: [array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.])]
+
+adl_list= [array([ 1.,  0.]), array([ 2.,  0.]), array([ 8.,  1.]), array([ 1.,  0.])] allocated load= []
+time =  10
+None allocated !!
+inside appending for unalloc existing
+
+ [  3.  11.]
+
+inside appending for unalloc existing
+
+ [  2.  11.]
+
+inside appending for unalloc existing
+
+ [  1.  11.]
+
+inside appending for unalloc existing
+
+ [  3.  11.]
+
+
+delay period []
+
+adl_list= [array([ 3.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  10
+None allocated !!
+inside appending for unalloc existing
+
+ [  1.  11.]
+
+inside appending for unalloc existing
+
+ [  1.  11.]
+
+inside appending for unalloc existing
+
+ [  3.  11.]
+
+inside appending for unalloc existing
+
+ [  3.  11.]
+
+
+delay period []
+
+adl_list= [array([ 1.,  0.]), array([ 1.,  0.]), array([ 3.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  10
+None allocated !!
+inside appending for unalloc existing
+
+ [  4.  11.]
+
+inside appending for unalloc existing
+
+ [  1.  11.]
+
+inside appending for unalloc existing
+
+ [  4.  11.]
+
+inside appending for unalloc existing
+
+ [  1.  11.]
+
+
+delay period []
+
+adl_list= [array([ 7.,  1.]), array([ 2.,  0.]), array([ 4.,  0.]), array([ 2.,  0.])] allocated load= []
+time =  10
+None allocated !!
+inside appending for unalloc existing
+
+ [  1.  11.]
+
+inside appending for unalloc existing
+
+ [  2.  11.]
+
+inside appending for unalloc existing
+
+ [  6.  11.]
+
+inside appending for unalloc existing
+
+ [  3.  11.]
+
+
+delay period []
+[11, 0.0, 1.0, 2.0, 8.0, 1.0]
+
+cost =  -135.0
+reward =  -13093.5 time_step_not_fully_allocated 44
+
+[11, 0.0, 3.0, 1.0, 1.0, 1.0]
+
+cost =  -170.0
+reward =  -13069.5 time_step_not_fully_allocated 44
+
+[11, 0.0, 1.0, 1.0, 3.0, 1.0]
+
+cost =  -180.0
+reward =  -13089.5 time_step_not_fully_allocated 44
+
+[11, 0.0, 7.0, 2.0, 4.0, 2.0]
+
+cost =  -135.0
+reward =  -13095.5 time_step_not_fully_allocated 44
+
+Action: [array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.]), array([ 1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,
+        0.,  0.,  0.])]
+
+adl_list= [array([ 1.,  0.]), array([ 2.,  0.]), array([ 8.,  1.]), array([ 1.,  0.])] allocated load= []
+time =  11
+None allocated !!
+
+delay period []
+
+is_all is False
+
+Failed to allocate
+
+adl_list= [array([ 3.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  11
+None allocated !!
+
+delay period []
+
+is_all is False
+
+Failed to allocate
+
+adl_list= [array([ 1.,  0.]), array([ 1.,  0.]), array([ 3.,  0.]), array([ 1.,  0.])] allocated load= []
+time =  11
+None allocated !!
+
+delay period []
+
+is_all is False
+
+Failed to allocate
+
+adl_list= [array([ 7.,  1.]), array([ 2.,  0.]), array([ 4.,  0.]), array([ 2.,  0.])] allocated load= []
+time =  11
+None allocated !!
+
+delay period []
+
+is_all is False
+
+Failed to allocate
+[0, 0, 1.0, 2.0, 8.0, 1.0]
+
+cost =  -135.0
+reward =  -16680.0 time_step_not_fully_allocated 48
+
+
+final cost unallocated =  -135.0
+final reward unallocated=  -127680.0
+
+[0, 0, 3.0, 1.0, 1.0, 1.0]
+
+cost =  -170.0
+reward =  -16652.5 time_step_not_fully_allocated 48
+
+
+final cost unallocated =  -170.0
+final reward unallocated=  -123152.5
+
+[0, 0, 1.0, 1.0, 3.0, 1.0]
+
+cost =  -180.0
+reward =  -16671.5 time_step_not_fully_allocated 48
+
+
+final cost unallocated =  -180.0
+final reward unallocated=  -127671.5
+
+[0, 0, 7.0, 2.0, 4.0, 2.0]
+
+cost =  -135.0
+reward =  -16682.0 time_step_not_fully_allocated 48
+
+
+final cost unallocated =  -135.0
+final reward unallocated=  -118682.0
+
+Episode is done 55
+
+deq_adl_after ep [deque([]), deque([]), deque([]), deque([])]
+
+deq_unalloc [deque([array([ 12.,   1.]), array([ 1.,  0.]), array([ 17.,   2.]), array([ 1.,  0.]), array([ 5.,  3.]), array([ 1.,0.]), array([ 1.,  0.]), array([ 1.,  0.]),array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 10.,   9.]), array([ 1.,  0.]), array([ 21.,  10.]), array([ 1.,  0.]), array([  3.,  11.]), array([ 1.,  0.])]), deque([array([ 14.,   1.]), array([ 2.,0.]), array([ 17.,   2.]), array([ 2.,  0.]), array([ 7.,  3.]), array([ 2.,  0.]), array([ 1.,  4.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 3.,  8.]), array([ 2.,  0.]), array([ 19.,   9.]), array([ 2.,  0.]), array([ 16.,  10.]), array([ 2.,  0.]), array([  2.,  11.]), array([ 2.,  0.])]), deque([array([ 18.,   2.]), array([ 8.,  1.]), array([ 7.,  3.]), array([ 8.,  1.]), array([ 8.,  1.]), array([ 8.,  1.]), array([ 8.,  1.]), array([ 8.,  1.]), array([ 1.,  8.]), array([ 8.,  1.]), array([ 15.,   9.]), array([ 8.,1.]), array([ 16.,  10.]), array([ 8.,  1.]), array([  1.,  11.]), array([ 8.,  1.])]),deque([array([ 4.,  1.]), array([ 1.,  0.]), array([ 15.,   2.]), array([ 1.,  0.]), array([ 19.,   3.]), array([ 1.,  0.]), array([ 16.,   4.]), array([ 1.,  0.]), array([ 7.,  5.]), array([ 1.,  0.]), array([ 2.,  6.]), array([ 1.,  0.]), array([ 5.,  7.]), array([ 1.,  0.]), array([ 18.,   8.]), array([1.,  0.]), array([ 22.,   9.]), array([ 1., 0.]), array([ 14.,  10.]), array([ 1.,  0.]), array([  3.,  11.]), array([ 1.,  0.])])]
+
+deq_adl_after ep [deque([]), deque([]), deque([]), deque([])]
+
+deq_unalloc [deque([array([ 15.,   1.]), array([ 3.,  0.]), array([ 11.,   2.]), array([ 3.,  0.]), array([ 1.,  3.]), array([ 3.,0.]), array([ 3.,  0.]), array([ 3.,  0.]),array([ 3.,  0.]), array([ 3.,  0.]), array([ 3.,  0.]), array([ 11.,   9.]), array([ 3.,  0.]), array([ 18.,  10.]), array([ 3.,  0.]), array([  1.,  11.]), array([ 3.,  0.])]), deque([array([ 9.,  1.]), array([ 1.,  0.]), array([ 19.,   2.]), array([ 1.,  0.]),array([ 6.,  3.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1., 0.]), array([ 1.,  0.]), array([ 1.,  8.]), array([ 1.,  0.]), array([ 15.,   9.]), array([ 1.,  0.]), array([ 17.,  10.]), array([ 1.,  0.]), array([  1.,  11.]), array([ 1.,  0.])]), deque([array([ 10.,   1.]), array([ 1.,  0.]), array([ 17.,   2.]), array([ 1.,  0.]), array([ 5.,  3.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 8.,  9.]), array([ 1.,  0.]), array([ 21.,  10.]), array([ 1.,  0.]),array([  3.,  11.]), array([ 1.,  0.])]), deque([array([ 8.,  1.]), array([ 1.,  0.]), array([ 19.,   2.]), array([ 1.,  0.]), array([ 13.,   3.]), array([ 1.,  0.]), array([ 2.,  4.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 3.,  8.]), array([ 1.,  0.]), array([18.,   9.]), array([ 1.,  0.]), array([ 19.,  10.]), array([ 1.,  0.]), array([  3.,  11.]), array([ 1.,  0.])])]
+
+deq_adl_after ep [deque([]), deque([]), deque([]), deque([])]
+
+deq_unalloc [deque([array([ 10.,   1.]), array([ 1.,  0.]), array([ 17.,   2.]), array([ 1.,  0.]), array([ 4.,  3.]), array([ 1.,0.]), array([ 1.,  0.]), array([ 1.,  0.]),array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 7.,  9.]), array([ 1., 0.]), array([ 21.,  10.]), array([ 1.,  0.]), array([  4.,  11.]), array([ 1.,  0.])]), deque([array([ 7.,  1.]), array([ 1.,  0.]), array([ 18.,   2.]), array([ 1.,  0.]), array([ 15.,   3.]), array([ 1.,  0.]), array([ 6.,  4.]), array([ 1.,  0.]), array([ 1., 5.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  7.]), array([ 1.,  0.]), array([ 10.,   8.]), array([ 1.,  0.]), array([ 23.,   9.]), array([ 1.,  0.]), array([ 13., 10.]), array([ 1.,  0.]), array([  1.,  11.]), array([ 1.,  0.])]), deque([array([ 17.,   1.]), array([ 3.,  0.]), array([ 11.,   2.]), array([ 3.,  0.]), array([ 1.,  3.]), array([ 3.,  0.]), array([ 3.,  0.]), array([ 3.,  0.]), array([ 3.,  0.]), array([ 3.,0.]), array([ 3.,  0.]), array([ 6.,  9.]),array([ 3.,  0.]), array([ 21.,  10.]), array([ 3.,  0.]), array([  4.,  11.]), array([3.,  0.])]), deque([array([ 9.,  1.]), array([ 1.,  0.]), array([ 19.,   2.]), array([ 1.,  0.]), array([ 8.,  3.]), array([ 1.,  0.]), array([ 1.,  4.]), array([ 1.,  0.]), array([ 1.,  0.]), array([ 1.,  0.]), array([1.,  0.]), array([ 4.,  8.]), array([ 1.,  0.]), array([ 21.,   9.]), array([ 1.,  0.]), array([ 12.,  10.]), array([ 1.,  0.]), array([  1.,  11.]), array([ 1.,  0.])])]
+
+deq_adl_after ep [deque([]), deque([]), deque([]), deque([])]
+
+deq_unalloc [deque([array([ 18.,   2.]), array([ 7.,  1.]), array([ 13.,   3.]), array([ 7.,  1.]), array([ 3.,  4.]), array([ 7.,1.]), array([ 7.,  1.]), array([ 7.,  1.]),array([ 7.,  1.]), array([ 6.,  8.]), array([ 7.,  1.]), array([ 22.,   9.]), array([ 7.,  1.]), array([ 12.,  10.]), array([ 7.,  1.]), array([  1.,  11.]), array([ 7.,  1.])]), deque([array([ 11.,   1.]), array([ 2.,0.]), array([ 18.,   2.]), array([ 2.,  0.]), array([ 4.,  3.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 1.,  8.]), array([ 2.,  0.]), array([ 14.,   9.]), array([ 2.,  0.]), array([ 18.,  10.]), array([ 2.,  0.]), array([  2.,  11.]), array([ 2.,  0.])]), deque([array([ 18.,   1.]), array([ 4.,  0.]), array([ 7.,  2.]), array([ 4.,  0.]), array([ 4.,  0.]), array([ 4.,  0.]), array([ 4.,  0.]), array([ 4.,  0.]), array([ 4.,  0.]), array([ 4.,  0.]), array([ 3.,  9.]), array([ 4.,  0.]), array([ 21.,  10.]), array([ 4.,  0.]), array([  6.,  11.]), array([ 4.,  0.])]), deque([array([ 14., 1.]), array([ 2.,  0.]), array([ 14.,   2.]), array([ 2.,  0.]), array([ 2.,  3.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 2.,  0.]), array([ 8.,  9.]), array([ 2.,  0.]), array([ 21.,  10.]), array([ 2.,  0.]), array([  3.,  11.]), array([ 2.,  0.])])]
+deq_adl [deque([array([ 0.,  0.]), array([ 4.,  1.]), array([ 16.,   2.]), array([ 17.,  3.]), array([ 5.,  4.]), array([ 1.,  5.]), array([ 0.,  6.]), array([ 0.,  7.]), array([ 5.,  8.]), array([ 21.,   9.]), array([15.,  10.]), array([  2.,  11.])]), deque([array([ 1.,  0.]), array([ 5.,  1.]), array([ 16.,   2.]), array([ 17.,   3.]), array([ 4.,  4.]), array([ 0.,  5.]), array([ 0.,  6.]), array([ 0.,  7.]), array([ 5.,  8.]), array([ 21.,   9.]), array([ 15.,  10.]), array([  1.,  11.])]), deque([array([ 3.,  0.]), array([ 17.,   1.]), array([ 8.,  2.]), array([ 1.,  3.]), array([ 0.,  4.]), array([ 0.,  5.]), array([ 0.,  6.]), array([ 0.,  7.]), array([ 0.,  8.]), array([ 2.,  9.]), array([ 20.,  10.]), array([  6.,  11.])]), deque([array([ 1.,  0.]), array([ 5.,  1.]), array([ 18.,   2.]), array([ 16.,   3.]), array([ 5.,  4.]), array([ 0.,  5.]), array([ 0.,  6.]), array([ 0.,  7.]), array([ 3.,  8.]), array([ 18.,   9.]), array([ 18.,  10.]), array([  4.,  11.])])]
+^Z
+[1]+  Stopped   
