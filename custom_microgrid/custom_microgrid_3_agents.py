@@ -240,9 +240,9 @@ class SecondaryController(gym.Env) :
 
             # print(agent.input.shape)
             # print(np.full((TOTAL_TIME_STEPS - self.prev_len), delv).shape)
-            agent.input[self.prev_len : ]=np.full((TOTAL_TIME_STEPS - self.prev_len), agent.del_v)
+            # agent.input[self.prev_len +1 ]=[TOTAL_TIME_STEPS - self.prev_len, agent.del_v]
 
-            agent.input_timeseries = np.stack([self.tim, agent.input], axis=1)     
+            agent.input_timeseries[self.curr_step +1] = [self.tim[self.curr_step +1], agent.del_v]
             # write to file : 
             savemat(agent.input_file_name, {'input' : np.transpose(agent.input_timeseries).tolist()})   
             agent.input_timeseries = matlab.double(agent.input_timeseries.tolist())
@@ -296,11 +296,11 @@ class SecondaryController(gym.Env) :
             agent.del_v = float(LINE_VOLTAGE_RATED) - agent.vl
             agent.del_i = float(LINE_CURRENT_RATED) - agent.il            
 
-            if not (agent.vl  <= LINE_VOLTAGE_MAX_LIMIT) and not (agent.vl >=LINE_VOLTAGE_MIN_LIMIT):
+            if  agent.vl  <= LINE_VOLTAGE_MIN_LIMIT and agent.vl >=LINE_VOLTAGE_MAX_LIMIT:
                 logging.debug("V failed:")
                 agent.v_level_failed = True
 
-            if not (agent.il  <= LINE_CURRENT_MAX_LIMIT) and not (agent.il >=LINE_CURRENT_MIN_LIMIT):
+            if agent.il  <= LINE_CURRENT_MIN_LIMIT and agent.il >=LINE_CURRENT_MAX_LIMIT:
                 logging.debug("I failed:")
                 agent.i_level_failed = True
         
