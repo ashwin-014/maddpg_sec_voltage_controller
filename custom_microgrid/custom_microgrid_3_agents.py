@@ -14,12 +14,13 @@ import matlab
 import matlab.engine
 from mat4py import loadmat, savemat
 import logging
+import h5py
 
 # import subprocess
 import os
 
-LINE_VOLTAGE_MAX_LIMIT = 1050
-LINE_VOLTAGE_MIN_LIMIT = 550
+LINE_VOLTAGE_MAX_LIMIT = 900
+LINE_VOLTAGE_MIN_LIMIT = 650
 LINE_CURRENT_MAX_LIMIT = 50
 LINE_CURRENT_MIN_LIMIT = 2
 
@@ -27,7 +28,8 @@ LINE_CURRENT_RATED = 10
 LINE_VOLTAGE_RATED = 750
 
 SAMPLE_TIME = 0.01
-TOTAL_TIME_STEPS = int(10 / 0.01)
+TOTAL_SIM_TIME = 8
+TOTAL_TIME_STEPS = int(TOTAL_SIM_TIME / SAMPLE_TIME)
 REWARD_AMOUNT_COMMON = 100
 """
 
@@ -66,20 +68,24 @@ class Agent():
         self.del_i = 0
         self.state = np.asarray([0, LINE_VOLTAGE_RATED / LINE_VOLTAGE_RATED, LINE_CURRENT_RATED / LINE_CURRENT_RATED])
         self.input = np.zeros(TOTAL_TIME_STEPS)
-        self.input_timeseries = np.stack([np.linspace(0, 10, TOTAL_TIME_STEPS), self.input],axis=1)
+        self.input_timeseries = np.stack([np.around(np.linspace(0, 8, TOTAL_TIME_STEPS), 2), self.input],axis=1)
         
-        self.input_file_name = "D:\\maddpg_sec_conrtoller\\custom_microgrid\\input_" + str(agent_num) + ".mat"
         # if os.path.exists(self.input_file_name):
         #     os.remove(self.input_file_name)
         # else:
         #     logging.debug("not able to remove file...")
         
-        with open(self.input_file_name, 'w') as f : pass # .close()
+        # with open(self.input_file_name, 'w') as f : pass # .close()
+        self.input_file_name = "D:\\maddpg_sec_conrtoller\\custom_microgrid\\input_" + str(agent_num) + ".mat"
         savemat(self.input_file_name, {'input_'+str(agent_num) : np.transpose(self.input_timeseries).tolist()})
+        # self.check_input_file = h5py.File(self.input_file_name, "r")
+        # self.check_input = self.check_input_file.get('input_' + str(agent_num))
+        # self.check_input = np.array(self.check_input)
+        self.check_input = loadmat(self.input_file_name)
         self.cost = 0
         self.reward = 0
 
-    def reset(self):
+    def reset(self, agent_num):
         self.state = np.asarray([0, LINE_VOLTAGE_RATED / LINE_VOLTAGE_RATED, LINE_CURRENT_RATED / LINE_CURRENT_RATED])
         self.v_level_failed= False
         self.i_level_failed= False
@@ -88,8 +94,10 @@ class Agent():
         self.del_v = 0
         self.del_i = 0
         self.input = np.zeros(TOTAL_TIME_STEPS)
-        self.input_timeseries = np.stack((np.linspace(0, 10, TOTAL_TIME_STEPS), self.input),axis=1)
-        open(self.input_file_name, 'w').close()
+        self.input_timeseries = np.stack([np.around(np.linspace(0, 8, TOTAL_TIME_STEPS), 2), self.input],axis=1)
+        savemat(self.input_file_name, {'input_'+str(agent_num) : np.transpose(self.input_timeseries).tolist()})
+        self.check_input = loadmat(self.input_file_name)
+        # open(self.input_file_name, 'w').close()
         
         self.cost = 0
         self.reward = 0
@@ -137,7 +145,6 @@ class SecondaryController(gym.Env) :
 
         self.tim = np.linspace(0, 10, num=TOTAL_TIME_STEPS)
         # self.xval = np.ones((1000, 2), dtype=float)
-        
 
         # ------ action spaces init ------------
         action_dim = 3 # inc, dec and no change
@@ -192,11 +199,10 @@ class SecondaryController(gym.Env) :
 
         # ---------- matlab engine init -------------
         if eng_name is None:            
-            names = matlab.engine.find_matlab()  
+            names = matlab.engine.find_matlab()
             logging.debug(names)      
             self.eng = matlab.engine.connect_matlab(names[0])  
         
-
         logging.debug('succesfully connected\n\n')
         logging.debug('starting controls .. \n\n')
                 
@@ -216,7 +222,6 @@ class SecondaryController(gym.Env) :
             # raise RuntimeError("Episode is done")
             self.eng.set_param('test_v_control_and_i_control_with_droop_copy','SimulationCommand','stop',nargout=0)
             logging.debug("Episode done : {0}".format(self.curr_episode))
-        
 
         # set action for each agent and
         # advance microgrid state
@@ -233,7 +238,6 @@ class SecondaryController(gym.Env) :
 
         if not self.time_is_over:
             self.curr_step += 1
-
         return obs_n, reward_n, done_n, info_n 
 
     def _get_info(self):
@@ -248,8 +252,6 @@ class SecondaryController(gym.Env) :
         # logging.debug("len agents : {0}".format(len(self.agents)))
         # logging.debug(len(action_n))
         # generate inputs for each controller chip        
-
-
         for i, agent in enumerate(self.agents):
 
             if np.argmax(action_n[i]) == 0 :
@@ -259,41 +261,44 @@ class SecondaryController(gym.Env) :
             else:
                 delv= 0
             logging.debug("delv ----> : {0}".format(agent.del_v))
-
-            # print(agent.input.shape)
-            # print(np.full((TOTAL_TIME_STEPS - self.prev_len), delv).shape)
-            # agent.input[self.prev_len +1 ]=[TOTAL_TIME_STEPS - self.prev_len, agent.del_v]
-
-            if not self.curr_step == 999:
-                agent.input_timeseries[self.curr_step +1] = [self.tim[self.curr_step +1], agent.del_v]
+            if not self.curr_step >= 800: # TOTAL_TIME_STEPS
+                # agent.input_timeseries[self.curr_step +1] = [self.tim[self.curr_step +1], agent.del_v]
+                agent.input_timeseries[self.curr_step][1] = agent.del_v
             
             # write to file : 
-            savemat(agent.input_file_name, {'input' : np.transpose(agent.input_timeseries).tolist()})   
-            # agent.input_timeseries = matlab.double(agent.input_timeseries.tolist())
-            # self.eng.workspace['input_' + str(i)] = agent.input_timeseries
+            savemat(agent.input_file_name, {'input' : np.transpose(agent.input_timeseries).tolist()})
+            agent.check_input = loadmat(agent.input_file_name)
+            logging.debug("checking the last written voltage : {0}".format(agent.check_input))
 
-        # self.eng.set_param('test_v_control_and_i_control_with_droop_copy','SimulationCommand','start',nargout=0)
-        
+        # self.eng.set_param('test_v_control_and_i_control_with_droop_copy','SimulationCommand','start',nargout=0)        
         # and simulate the microgrid
-        j=0          
         # while self.eng.get_param('test_v_control_and_i_control_with_droop_copy','SimulationStatus')!=('stopped' or 'terminating'):            
         if self.eng.get_param('test_v_control_and_i_control_with_droop_copy','SimulationStatus')=='paused':
-            # operations check
-#             print('%f  : %f' ,prev_len, len(self.eng.workspace['ScopeData'].get('signals').get('values')))
-#             print(self.eng.workspace['ScopeData'].get('signals').get('values')) # [prev_len:]
+            # Trying changing constant value
+            for i, agent in enumerate(self.agents):
+                if np.argmax(action_n[i]) == 0:
+                    curr_ref = int(self.eng.get_param('test_v_control_and_i_control_with_droop_copy/Vref'+str(i),'Value')) # ,nargout=0)
+                    print("0", curr_ref, type(curr_ref))
+                    self.eng.set_param('test_v_control_and_i_control_with_droop_copy/Vref'+str(i),'Value',str(curr_ref+1),nargout=0)
+                if np.argmax(action_n[i]) == 1:
+                    curr_ref = int(self.eng.get_param('test_v_control_and_i_control_with_droop_copy/Vref'+str(i),'Value')) # ,nargout=0)
+                    print("1", curr_ref, type(curr_ref))
+                    self.eng.set_param('test_v_control_and_i_control_with_droop_copy/Vref'+str(i),'Value',str(curr_ref-1),nargout=0)
+                if np.argmax(action_n[i]) == 2:
+                    curr_ref = int(self.eng.get_param('test_v_control_and_i_control_with_droop_copy/Vref'+str(i),'Value')) # ,nargout=0)
+                    print("2", curr_ref, type(curr_ref))
+                    self.eng.set_param('test_v_control_and_i_control_with_droop_copy/Vref'+str(i),'Value',str(curr_ref),nargout=0)
 
-            # print("j : ", j)
+            # ToDo : operations check
             logging.debug("curr step : {0}".format(self.curr_step))
-
             self.eng.set_param('test_v_control_and_i_control_with_droop_copy','SimulationCommand','update',nargout=0) #if you have updated any simulation parameters
             
             if self.curr_step >= TOTAL_TIME_STEPS : # * SAMPLE_TIME:                    
-                logging.debug("stopping.. : {0} \t self.curr_step : {1}".format(j, self.curr_step))
+                logging.debug("stopping.. : \t self.curr_step : {1}".format(self.curr_step))
                 self.eng.set_param('test_v_control_and_i_control_with_droop_copy','SimulationCommand','stop',nargout=0)
             
             self.eng.set_param('test_v_control_and_i_control_with_droop_copy','SimulationCommand','continue',nargout=0)
             
-            j+=1
         else:
             self.eng.set_param('test_v_control_and_i_control_with_droop_copy','SimulationCommand','stop',nargout=0)
             logging.debug("stopped *************************** error")
@@ -306,17 +311,14 @@ class SecondaryController(gym.Env) :
 
         # generate inputs to NN 
         for i, agent in enumerate(self.agents):
-
             agent.vl = np.array(self.eng.workspace['V_out_' + str(i)].get('signals').get('values')[-1], dtype=float)[0]
             logging.debug("Vl : {0}".format(agent.vl))
             agent.il = np.array(self.eng.workspace['I_out_' + str(i)].get('signals').get('values')[-1], dtype=float)[0]
-
             logging.debug("Il : {0}".format(agent.il))
 
             # not needed
             # agent.vl = agent.vl + action_n[i,0] * self.delta_v_change
             # agent.il = agent.il + action_n[i,1] * self.delta_i_change
-
             agent.del_v = float(LINE_VOLTAGE_RATED) - agent.vl
             agent.del_i = float(LINE_CURRENT_RATED) - agent.il            
 
@@ -327,8 +329,6 @@ class SecondaryController(gym.Env) :
             if agent.il  <= LINE_CURRENT_MIN_LIMIT and agent.il >=LINE_CURRENT_MAX_LIMIT:
                 logging.debug("I failed:")
                 agent.i_level_failed = True
-        
-
         self.prev_len = len(self.full_signal)
 
 
@@ -355,18 +355,15 @@ class SecondaryController(gym.Env) :
     def _get_obs(self, agent):
 
         agent.state = np.zeros(3)
-        
         if not self.time_is_over:
             agent.state[0] =  self.curr_step+1
         else:
             agent.state[0] =  0
-        
         agent.state[1] =  agent.vl / LINE_VOLTAGE_RATED
         agent.state[2] =  agent.il / LINE_CURRENT_RATED
         # ---------------------------------------- remove print -------------------------------
         logging.debug("state : {0}".format(agent.state))
-        # ---------------------------------------------------------        
-
+        # ---------------------------------------------------------
         return agent.state
 
     def _get_done(self):
@@ -388,8 +385,8 @@ class SecondaryController(gym.Env) :
         self.del_i = 0
 
         # self.agents = [Agent() for i in range(self.num_agents) ]
-        for agent in self.agents:
-            agent.reset()
+        for agent_num, agent in enumerate(self.agents):
+            agent.reset(agent_num)
 
         initial_state_batch = [agent.state for agent in self.agents]
         
